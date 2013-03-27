@@ -8,6 +8,6 @@ function UserController($scope) {
    };
 
    $scope.getFullName = function() {
-      return $scope.currentUser.firstName + " " + $scope.currentUser.lastName;
+      return $scope.currentUser.firstN + " " + $scope.currentUser.lastName;
    };
 }
