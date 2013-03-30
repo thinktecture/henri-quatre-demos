@@ -1,0 +1,16 @@
+<div ng-app ng-controller="UserController">
+    <b>Names</b>
+    <ul>
+        <li ng-repeat="user in userList">
+            <a ng-click="selectUser(user)">{{user.getFullName()}}</a>
+        </li>
+    </ul>
+
+    <hr>
+    <b>Selected User</b><br>
+
+    First Name: <input type=text ng-model="currentUser.firstName"> <br>
+    Last Name: <input type=text ng-model="currentUser.lastName"><br>
+    Full Name: {{currentUser.getFullName()}}
+</div>
+
