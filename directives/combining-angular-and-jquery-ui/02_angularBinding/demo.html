@@ -2,10 +2,18 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <!-- Embedded Fragment - maindiv -->
-<div>
-    Date Of Birth: <input type="text" id="dateOfBirth">
+<!--
+PROCESS_HIGHLIGHT
+ng-app="myApp"
+ng-controller="DemoController"
+ng-model="user.dateOfBirth"
+{{user.dateOfBirth}}
+-->
+<div ng-app ng-controller="DemoController">
+    Date Of Birth:
+    <input type="text" ng-model="user.dateOfBirth">
     <br>
     Current user's date of birth:
-    <span id="dateOfBirthDisplay"></span>
+    <span id="dateOfBirthDisplay">{{user.dateOfBirth}}</span>
 </div>
 <!-- Fragment End - maindiv -->

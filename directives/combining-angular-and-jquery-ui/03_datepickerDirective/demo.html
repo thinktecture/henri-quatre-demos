@@ -2,11 +2,11 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <!-- Embedded Fragment - maindiv -->
-<div>
+<div ng-app="demo" ng-controller="DemoController">
     Date Of Birth:
-    <input type="text" id="dateOfBirth">
+    <my-datepicker type="text" ng-model="user.dateOfBirth"></my-datepicker>
     <br>
     Current user's date of birth:
-    <span id="dateOfBirthDisplay"></span>
+    <span id="dateOfBirthDisplay">{{user.dateOfBirth}}</span>
 </div>
 <!-- Fragment End - maindiv -->

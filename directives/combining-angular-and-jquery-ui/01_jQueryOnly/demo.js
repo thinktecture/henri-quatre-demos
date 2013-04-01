@@ -14,7 +14,6 @@ $(function () {
 
    $("#dateOfBirth").datepicker({
          inline: true,
-         dateFormat: 'dd.mm.yy',
          onClose: processChange,
          onSelect: processChange
       }
