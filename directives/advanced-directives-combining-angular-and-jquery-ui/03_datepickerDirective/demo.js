@@ -1,8 +1,10 @@
+/* Embedded Fragment - controller */
 function DemoController($scope) {
    $scope.user = {
       dateOfBirth: new Date(1970, 0, 1)
    }
 }
+/* Fragment End - controller */
 
 /* Embedded Fragment - directive */
 
@@ -12,7 +14,7 @@ angular.module("demo", []).directive('myDatepicker', function ($parse) {
       replace: true,
       transclude: false,
       compile: function (element, attrs) {
-         var ngModel = $parse(attrs.ngModel);
+         var modelAccessor = $parse(attrs.ngModel);
 
          var html = "<input type='text' id='" + attrs.id + "' >" +
             "</input>";
@@ -27,7 +29,7 @@ angular.module("demo", []).directive('myDatepicker', function ($parse) {
 
                scope.$apply(function (scope) {
                   // Change bound variable
-                  ngModel.assign(scope, date);
+                  modelAccessor.assign(scope, date);
                });
             };
 
@@ -37,7 +39,7 @@ angular.module("demo", []).directive('myDatepicker', function ($parse) {
                onSelect: processChange
             });
 
-            scope.$watch(ngModel, function (val) {
+            scope.$watch(modelAccessor, function (val) {
                var date = new Date(val);
                element.datepicker("setDate", date);
             });
@@ -47,7 +49,6 @@ angular.module("demo", []).directive('myDatepicker', function ($parse) {
       }
    };
 });
-
 
 /* Fragment End - directive */
 
