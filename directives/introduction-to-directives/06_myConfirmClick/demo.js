@@ -1,3 +1,4 @@
+/* Embedded Fragment - directive */
 var module = angular.module("myApp", []);
 
 module.directive("myConfirmClick", function ($parse) {
@@ -6,13 +7,15 @@ module.directive("myConfirmClick", function ($parse) {
       link: function (scope, element, attrs) {
          var parsed = $parse(attrs.myConfirmClick);
          element.bind("click", function () {
-            scope.$apply(function(){
+             alert("Handling the click!");
+             scope.$apply(function(){
                parsed(scope);
             });
          });
       }
    }
 });
+/* Fragment End - directive */
 
 
 function SumController($scope) {
