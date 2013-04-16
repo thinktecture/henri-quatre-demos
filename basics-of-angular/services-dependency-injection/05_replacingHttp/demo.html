@@ -1,0 +1,7 @@
+<div ng-app="demo" ng-controller="DemoController">
+    Postal Code: <input type=text ng-model="query.postalCode">
+    Country: <input type=text ng-model="query.countryCode">
+    <button ng-click="performPostcodeLookup()">Lookup</button><br>
+    Result: {{lookupResult.displayValue}}
+</div>
+
