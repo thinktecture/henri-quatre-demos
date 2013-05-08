@@ -1,0 +1,29 @@
+
+
+<div ng-app="signalRIntegrationApp">
+    <div ng-controller="ServerTimeController">
+        <div>
+            <h3>Time from server (being pushed every 5 seconds):</h3>
+            <h4>{{currentServerTime}}</h4>
+        </div>
+
+        <div>
+            <button ng-click="getServerTime()">Get time from server</button>
+
+            <div>
+                <h3>Manual time from server:</h3>
+                <h4>{{currentServerTimeManually}}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div ng-controller="PerformanceDataController">
+        <h3>Overall CPU time:</h3>
+        <div>
+            <smoothie-chart data="cpuData" />
+        </div>
+    </div>
+</div>
+<script src="http://henriquat.re/demoinfrastructure/jquery-1.9.1.min.js"></script>
+<script src="http://henriquat.re/demoinfrastructure/jquery.signalR-1.1.0-beta1.min.js" ></script>
+<script src="http://henriquat.re/demoinfrastructure/smoothie.js"></script>
